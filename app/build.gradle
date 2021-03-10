@@ -34,6 +34,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+
+
+}
+
+ext {
+    appCompatVersion = '1.0.0'
+    designSupportVersion = '1.0.0'
+    recyclerViewVersion = '1.0.0'
 }
 
 dependencies {
@@ -44,11 +52,20 @@ dependencies {
     // Glide for remote image loading
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
     // Room for simple persistence with an ORM
     def room_version = "2.2.5"
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation 'com.facebook.stetho:stetho:1.5.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+
+    implementation "androidx.appcompat:appcompat:${appCompatVersion}"
+    implementation "com.google.android.material:material:${designSupportVersion}"
+    implementation "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+
 }
